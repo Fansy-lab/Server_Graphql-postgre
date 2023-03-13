@@ -1,6 +1,0 @@
-//creates the schema.prisma in the postgres DDBB
-npx prisma migrate dev --name init
-//feeds the database with data
-node seed.js
-//starts the server
-node .\server.ts
