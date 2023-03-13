@@ -67,25 +67,7 @@ const resolvers = {
       ]);
       return { transactions, totalCount: count };
     },
-    transactionById: async (_, args) => {
-      return prisma.transactions.findFirst({
-        where: { id: { equals: args.transId } },
-      });
-    },
-    transactionsByAccountId: async (_, args) => {
-      return prisma.transactions.findMany({
-        where: { accountId: { equals: args.id } },
-      });
-    },
-    transactions: async (_, args) => {
-      return prisma.transactions.findMany({
-        take: args.limit,
-        skip: args.offset,
-        include: {
-          category: true,
-        },
-      });
-    },
+
     allUniqueBanks: async () => {
       const accounts = await prisma.accounts.findMany();
       const banks = new Set();

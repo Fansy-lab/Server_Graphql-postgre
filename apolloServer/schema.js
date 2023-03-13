@@ -52,9 +52,6 @@ const typeDefs = gql`
 
     allUniqueBanks: [String!]!
     allUniqueAccounts: [String!]!
-    transactionById(transId: String!): Transaction
-    transactionsByAccountId(id: ID!): [Transaction]
-    transactions(limit: Int, offset: Int): [Transaction!]!
     categories: [Category!]!
     accounts: [Account!]!
   }
